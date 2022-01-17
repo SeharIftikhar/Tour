@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:https="http://java.sun.com/jsf/composite"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+<h:head>
+   <link href="web\resources\css\bootstrap.min.css" rel="stylesheet"> </link>
+   <meta name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+   <h:outputStylesheet library = "css" name = "styles.css" />
+   <link type = "text/css" rel = "stylesheet"
+         href = "web\resources\css\styles.css = css" />
+</h:head>
+<body>
+<!--  <h:graphicImage style="background-image: url('https://www.carsrental247.com/img/tour.jpeg'); filter: blur(5px);
+-webkit-filter: blur(5px); width: 1350px; height: 635px"  value="https://www.carsrental247.com/img/tour.jpeg"/> -->
+<h:form >
+   <h:panelGrid border="2">
+      <h:outputLabel value="Enter Name" for="txtname"></h:outputLabel>
+      <h:inputText id="txtname" value="#{adminBean.a.name}"></h:inputText>
+      <h:outputLabel value="Enter Email" for="txtemail"></h:outputLabel>
+      <h:inputText id="txtemail" value="#{adminBean.a.email}"></h:inputText>
+      <h:outputLabel value="Enter password" for ="txtpass"></h:outputLabel>
+      <h:inputText id="txtpass" value="#{adminBean.a.password}"></h:inputText>
+      <hr></hr>
+      <h:commandButton value="login" action="#{adminBean.saveToDB}"></h:commandButton>
+   </h:panelGrid>
+</h:form>
+</body>
+</html>

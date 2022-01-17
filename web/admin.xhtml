@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:https="http://java.sun.com/jsf/composite"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+<head>
+    <h:outputStylesheet library = "css" name = "styles.css" />
+    <link type = "text/css" rel = "stylesheet"
+          href = "web\resources\css\styles.css = css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"/>
+</head>
+
+<h:outputScript type="text/javascript">
+    document.getElementById("loginbtn").onclick = function () {
+        location.href = "adminmain.xhtml";
+    };
+</h:outputScript>
+<body style="background-image: url(https://www.carsrental247.com/img/tour.jpeg);
+background-repeat: repeat; width: 1350px; height: 635px">
+
+<div style=" height:20%; padding:20px">
+    <h:graphicImage style="background-image: url('https://banner2.cleanpng.com/20180811/rbj/kisspng-narrow-body-aircraft-aviation-logo-jet-aircraft-signed-out-sygic-travel-5b6eb31bb44563.8659054715339814677384.jpg'); height: 70%"
+                    value="https://banner2.cleanpng.com/20180811/rbj/kisspng-narrow-body-aircraft-aviation-logo-jet-aircraft-signed-out-sygic-travel-5b6eb31bb44563.8659054715339814677384.jpg"/>
+    <br/>
+    tour
+    management
+    system
+    <h1 style="font-family:segoe print,serif; text-align:center"> Tourism Management System </h1>
+    <br/>
+</div>
+
+
+<div style="height:150px;">
+    <div style=" float:left; width:20%; height:50%">
+    </div>
+    <div style=" float:left; width:60%; height:50%">
+        <br/>
+        <br/>
+        <h2 style="font-family:segoe print,serif; text-align:center"> Admin Login </h2>
+        <br/>
+    </div>
+    <div style=" float:left; width:20%; height:50%">
+    </div>
+</div>
+
+<div style ="width : 100% ; height:35%;background-color:pink;color:black">
+    <h:form >
+        <h:panelGrid style="width: 500px; alignment: center">
+            <h:outputLabel value="Enter Name" for="txtname"></h:outputLabel>
+            <h:inputText id="txtname" value="#{adminBean.a.name}"></h:inputText>
+            <h:outputLabel value="Enter Email" for="txtemail"></h:outputLabel>
+            <h:inputText id="txtemail" value="#{adminBean.a.email}"></h:inputText>
+            <h:outputLabel value="Enter password" for ="txtpass"></h:outputLabel>
+            <h:inputText id="txtpass" value="#{adminBean.a.password}"></h:inputText>
+            <hr></hr>
+            <h:commandButton value="login" action="#{adminBean.saveToDB}"></h:commandButton>
+        </h:panelGrid>
+    </h:form>
+</div>
+
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div style="background-color:pink; text-align: center; width:100%; height:20%">
+    <h3> Tourism Management System </h3>
+    <p>Tourism system is the Government agency responsible for attracting international visitors <br/> to Pakistan, both for leisure and business events. The organisation is active in 15 key markets and activities <br/> include advertising, PR and media programs, trade shows and industry programs, consumer promotions, online <br/> communications and consumer research.</p>
+
+</div>
+<div style="background-color:pink; text-align: center; width:100%; height:5%">
+
+</div>
+
+<div style="height:50%; padding:10px">
+    <div style="float:left; width:20%; height:50%; padding-top:20px">
+        <p> <b> Help </b> </p>
+
+        <a href="contact.html" style="text-decoration: none; color: brown"> Contact us </a>
+        <br/>
+        <a href="#" style="text-decoration: none; color: brown"> Term and policy </a>
+        <br/>
+        <a href="#" style="text-decoration: none; color: brown"> Privacy policy </a>
+        <br/>
+    </div>
+
+    <div style="float:left; width:20%; height:50%; padding-top:20px">
+        <p> <b> Contact </b> </p>
+        <a href="#" style="text-decoration: none; color: brown"> store locator </a>
+        <br/>
+
+        <a href="#" style="text-decoration: none; color: brown"> FAQs</a>
+        <br/>
+        <a href="#" style="text-decoration: none; color: brown"> About us </a>
+        <br/>
+
+    </div>
+
+    <div style="float:left; width:20%; height:50%; padding-top:20px">
+        <p> <b> Customer Care </b> </p>
+
+        <a href="#" style="text-decoration: none; color: brown"> 03217567567 </a>
+        <br/>
+        <a href="#" style="text-decoration: none; color: brown"> care@seharandajwa.com</a>
+        <br/>
+        <a href="#" style="text-decoration: none; color: brown">  Disclaimer </a>
+        <br/>
+    </div>
+
+    <div style="float:left; width:20%; height:50%; padding-top:20px">
+        <p> <b> My Account </b> </p>
+        <a href="#" style="text-decoration: none; color: brown"> Account info </a>
+        <br/>
+        <a href="#" style="text-decoration: none; color: brown">Addresses</a>
+        <br/>
+        <a href="#" style="text-decoration: none; color: brown">  Order history </a>
+        <br/>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+

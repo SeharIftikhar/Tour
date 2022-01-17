@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:https="http://java.sun.com/jsf/composite"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+<head>
+    <title>Client registration</title>
+</head>
+<body>
+<h:form id="registrationForm">
+    <h:panelGrid header="Registration Form" style="width: 500px;">
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Name:"/>
+            <h:inputText id="Name" value="#{clientBean.c.name}" label="Name" />
+            <h:outputLabel value="CNIC:"/>
+            <h:inputText id="CNIC" value="#{clientBean.c.cnic}" label="CNIC"/>
+            <h:outputLabel value="City:"/>
+            <h:inputText id="City" value="#{clientBean.c.city}"/>
+            <h:outputLabel value="ContactNo:"/>
+            <h:inputText id="ContactNo" value="#{clientBean.c.contactNo}"/>
+            <h:outputLabel value=""/>
+            <h:commandButton action="#{clientBean.saveToDB}" value="Register" update="registrationForm"/>
+        </h:panelGrid>
+    </h:panelGrid>
+</h:form>
+</body>
+</html>
