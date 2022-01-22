@@ -41,7 +41,7 @@ public class TourBean {
 
         }
         System.out.println("Opened database successfully");
-        PreparedStatement ps=c.prepareStatement("insert into tours (name, email, password) values (?, ?, ?)");
+        PreparedStatement ps=c.prepareStatement("insert into tours (destination, date, pickup) values (?, ?, ?)");
         ps.setString(1, this.t.getDestination());
         ps.setDate(2, (Date) this.t.getDate());
         ps.setString(3, this.t.getPickup());
