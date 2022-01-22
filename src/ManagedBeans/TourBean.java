@@ -1,6 +1,5 @@
 package ManagedBeans;
 
-import BackingBeans.Admin;
 import BackingBeans.Tour;
 import DB.DbConnection;
 

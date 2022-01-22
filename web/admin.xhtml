@@ -53,7 +53,7 @@ background-repeat: repeat; width: 1350px; height: 635px">
             <h:outputLabel value="Enter password" for ="txtpass"></h:outputLabel>
             <h:inputText id="txtpass" value="#{adminBean.a.password}"></h:inputText>
             <hr></hr>
-            <h:commandButton value="login" action="#{adminBean.saveToDB}"></h:commandButton>
+            <h:commandButton url = "http://localhost:8080/Tour_war_exploded/adminmain.xhtml" value="login" action="#{adminBean.saveToDB}"></h:commandButton>
         </h:panelGrid>
     </h:form>
 </div>

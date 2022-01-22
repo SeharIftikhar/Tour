@@ -50,5 +50,7 @@ public class AdminBean {
 
         ps.executeUpdate();
         System.out.println("Success!!");
+
+
     }
 }
