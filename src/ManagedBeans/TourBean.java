@@ -1,25 +1,24 @@
 package ManagedBeans;
 
 import BackingBeans.Admin;
+import BackingBeans.Tour;
 import DB.DbConnection;
-import java.sql.DriverManager;
+
+import java.sql.*;
 
 import javax.faces.bean.ManagedBean;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 @ManagedBean(name ="tourBean")
 public class TourBean {
     DbConnection dbConnection=new DbConnection();
 
-    Admin a=new Admin();
+    Tour t=new Tour();
 
-    public void setA(Admin a){
-        this.a=a;
+    public void setT(Tour t){
+        this.t=t;
     }
-    public Admin getA(){
-        return a;
+    public Tour getT(){
+        return t;
 
     }
 
@@ -27,7 +26,7 @@ public class TourBean {
     }
 
     public void init(){
-        a= new Admin();
+        t= new Tour();
     }
     public void saveToDB() throws SQLException { //save to db function
         Connection c= null;
@@ -43,10 +42,10 @@ public class TourBean {
 
         }
         System.out.println("Opened database successfully");
-        PreparedStatement ps=c.prepareStatement("insert into admin (name, email, password) values (?, ?, ?)");
-        ps.setString(1, this.a.getName());
-        ps.setString(2,this.a.getEmail());
-        ps.setString(3, this.a.getPassword());
+        PreparedStatement ps=c.prepareStatement("insert into tours (name, email, password) values (?, ?, ?)");
+        ps.setString(1, this.t.getDestination());
+        ps.setDate(2, (Date) this.t.getDate());
+        ps.setString(3, this.t.getPickup());
 
         ps.executeUpdate();
         System.out.println("Success!!");
