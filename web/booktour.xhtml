@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>tour form</title>
+</head>
+<body>
+<h:form id="form">
+
+<table>
+<tr>
+    <td><h:outputLabel >Full Name</h:outputLabel></td>
+    <td><h:inputText id="name-id" value="#{clientBean.c.name}"/></td>
+</tr>
+
+    <tr>
+        <td><h:outputLabel >Your PhoneNo</h:outputLabel></td>
+        <td><h:inputText id="phoneNo-id" value="#{clientBean.c.contactNo}"/></td>
+    </tr>
+
+
+    <tr>
+        <td><h:outputLabel >Select Destination</h:outputLabel></td>
+        <td> <h:selectOneMenu value="#{tourBean.t.destination}">
+            <f:selectItem itemValue="Anso lake" itemLabel="Kaghan - Anso lake " />
+            <f:selectItem itemValue="Ratti gali lake " itemLabel="Kashmir - Ratti gali lake " />
+            <f:selectItem itemValue="Malam jabba" itemLabel="Kashmir - Malam jabba " />
+        </h:selectOneMenu></td>
+    </tr>
+
+
+    <tr>
+        <td><h:outputLabel >Select Package</h:outputLabel></td>
+        <td> <h:selectOneMenu value="#{tourBean.t.packages}">
+            <f:selectItem itemValue="1 Day" itemLabel="Kaghan(Anso lake) - 1 Day" />
+            <f:selectItem itemValue="1 Day" itemLabel="Kashmir(Ratti gali lake) - 1 Day  " />
+            <f:selectItem itemValue="5 Day" itemLabel="Kashmir(Malam jabba) - 1 Day" />
+        </h:selectOneMenu></td>
+    </tr>
+
+
+
+</table>
+    <h:commandButton value="Book Now" action="response.xhtml"></h:commandButton>
+</h:form>
+
+
+</body>
+</html>
