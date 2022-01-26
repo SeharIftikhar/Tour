@@ -1,6 +1,6 @@
 package ManagedBeans;
 
-import BackingBeans.Tour;
+import BackingBeans.User;
 import DB.DbConnection;
 
 import java.sql.*;
@@ -8,23 +8,23 @@ import java.sql.*;
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name ="tourBean")
-public class TourBean {
+public class UserBean {
     DbConnection dbConnection=new DbConnection();
-    Tour t=new Tour();
-    public void setT(Tour t){
-        this.t=t;
+    User u=new User();
+    public void setU(User u){
+        this.u=u;
     }
-    public Tour getT(){
-        return t;
+    public User getU(){
+        return u;
     }
 
-   public TourBean(){
+    public UserBean(){
 
-   }
+    }
 
 
     public void init(){
-        t= new Tour();
+        u= new User();
     }
     public void saveToDB() throws SQLException { //save to db function
         Connection c= null;
@@ -40,10 +40,13 @@ public class TourBean {
 
         }
         System.out.println("Opened database successfully");
-        PreparedStatement ps=c.prepareStatement("insert into tours (destination, date, pickup) values ( ?, ?, ?)");
-        ps.setString(1, this.t.getDestination());
-        ps.setDate(2, (Date) this.t.getDate());
-        ps.setString(3, this.t.getPickup());
+        PreparedStatement ps=c.prepareStatement("insert into tours (name, email, gender, address, phoneNo) values ( ?, ?, ?)");
+        ps.setString(1, this.u.getName());
+        ps.setString(1, this.u.getEmail());
+
+        ps.setString(3, this.u.getGender());
+        ps.setString(3, this.u.getAddress());
+        ps.setInt(3, this.u.getPhoneNo());
 
 
         ps.executeUpdate();

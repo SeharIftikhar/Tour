@@ -14,19 +14,19 @@
 
 <table>
 <tr>
-    <td><h:outputLabel >Full Name</h:outputLabel></td>
-    <td><h:inputText id="name-id" value="#{clientBean.c.name}"/></td>
+    <td><h:outputLabel>Full Name</h:outputLabel></td>
+    <td><h:inputText id="name-id" value="#{user.name}"/></td>
 </tr>
 
     <tr>
-        <td><h:outputLabel >Your PhoneNo</h:outputLabel></td>
-        <td><h:inputText id="phoneNo-id" value="#{clientBean.c.contactNo}"/></td>
+        <td><h:outputLabel>Your PhoneNo</h:outputLabel></td>
+        <td><h:inputText id="phoneNo-id" value="#{user.phoneNo}"/></td>
     </tr>
 
 
     <tr>
-        <td><h:outputLabel >Select Destination</h:outputLabel></td>
-        <td> <h:selectOneMenu value="#{tourBean.t.destination}">
+        <td><h:outputLabel>Select Destination</h:outputLabel></td>
+        <td> <h:selectOneMenu value="#{tourBean.destination}">
             <f:selectItem itemValue="Anso lake" itemLabel="Kaghan - Anso lake " />
             <f:selectItem itemValue="Ratti gali lake " itemLabel="Kashmir - Ratti gali lake " />
             <f:selectItem itemValue="Malam jabba" itemLabel="Kashmir - Malam jabba " />
@@ -35,13 +35,15 @@
 
 
     <tr>
-        <td><h:outputLabel >Select Package</h:outputLabel></td>
-        <td> <h:selectOneMenu value="#{tourBean.t.packages}">
+        <td><h:outputLabel>Select Package</h:outputLabel></td>
+        <td> <h:selectOneMenu value="#{user.packages}">
             <f:selectItem itemValue="1 Day" itemLabel="Kaghan(Anso lake) - 1 Day" />
             <f:selectItem itemValue="1 Day" itemLabel="Kashmir(Ratti gali lake) - 1 Day  " />
             <f:selectItem itemValue="5 Day" itemLabel="Kashmir(Malam jabba) - 1 Day" />
         </h:selectOneMenu></td>
     </tr>
+    <tr><td><h:outputLabel>Address</h:outputLabel></td>
+        <td><h:inputTextarea value="#{user.address}" cols="50" rows="5"/></td></tr>
 
 
 
