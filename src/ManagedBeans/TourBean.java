@@ -1,7 +1,7 @@
 package ManagedBeans;
 
 import BackingBeans.Tour;
-import DB.DbConnection;
+import DB.Functions;
 
 import java.sql.*;
 
@@ -9,7 +9,7 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name ="tourBean")
 public class TourBean {
-    DbConnection dbConnection=new DbConnection();
+    Functions dbConnection=new Functions();
     Tour t=new Tour();
     public void setT(Tour t){
         this.t=t;

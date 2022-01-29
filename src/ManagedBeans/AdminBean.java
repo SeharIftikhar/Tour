@@ -1,17 +1,22 @@
-package ManagedBean;
+package ManagedBeans;
 
 import BackingBeans.Admin;
-import DB.DbConnection;
+import DB.Functions;
+
+import java.io.IOException;
 import java.sql.DriverManager;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 @ManagedBean(name ="adminBean")
 public class AdminBean {
-    DbConnection dbConnection=new DbConnection();
+    private Functions func = new Functions();
+    Functions dbConnection=new Functions();
 
     Admin a=new Admin();
 
@@ -52,5 +57,39 @@ public class AdminBean {
         System.out.println("Success!!");
 
 
+    }
+
+
+
+
+
+    public String addAdmin() throws SQLException, ClassNotFoundException {
+        String name = func.getParameterByName("name");
+        String email = func.getParameterByName("email");
+        String password = func.getParameterByName("password");
+
+
+        func.addAdmin(name, email, password);
+        return "home";
+    }
+
+    public void editAdmin() throws SQLException, ClassNotFoundException, IOException {
+        String idStr = func.getParameterByName("editForm:id");
+        int id = Integer.valueOf(idStr);
+        String name = func.getParameterByName("name");
+        String email = func.getParameterByName("email");
+        String password = func.getParameterByName("password");
+
+
+        func.editAdmin(id, name, email, password);
+
+        FacesContext.getCurrentInstance().getExternalContext().redirect("home.xhtml"); //Redirect to home.xhtml
+    }
+
+    public String deleteAdmin(String idStr) throws SQLException, ClassNotFoundException {
+        int id = Integer.valueOf(idStr);
+
+        func.deleteAdmin(id);
+        return "home";
     }
 }

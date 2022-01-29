@@ -1,7 +1,7 @@
 package ManagedBeans;
 
 import BackingBeans.Client;
-import DB.DbConnection;
+import DB.Functions;
 
 import javax.faces.bean.ManagedBean;
 import java.sql.Connection;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 @ManagedBean(name ="clientBean")
 public class ClientBean {
-    DbConnection dbConnection=new DbConnection();
+    Functions dbConnection=new Functions();
 
     Client c=new Client();
 

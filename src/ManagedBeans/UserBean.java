@@ -1,7 +1,7 @@
 package ManagedBeans;
 
 import BackingBeans.User;
-import DB.DbConnection;
+import DB.Functions;
 
 import java.sql.*;
 
@@ -9,7 +9,7 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name ="tourBean")
 public class UserBean {
-    DbConnection dbConnection=new DbConnection();
+    Functions dbConnection=new Functions();
     User u=new User();
     public void setU(User u){
         this.u=u;
